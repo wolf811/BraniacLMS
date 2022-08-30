@@ -1,5 +1,7 @@
 {% extends 'base.html' %} 
+{% load static %}
 {% load email_to_link %}
+{% load tel_to_link %}
 {% block content %}
 
 
@@ -36,11 +38,11 @@
               <p class="card-text">
                 <ul class="list-unstyled">
                   <li>Телефон</li>
-                  <li><strong>+7-999-11-11111</strong></li>
+                  <li><strong>{{ '+7-999-11-11111'|tel_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Email</li>
-                  <li><strong>>{{ 'geeklab@spb.ru'|email_to_link }}</strong></li>
+                  <li><strong>{{ 'geeklab@spb.ru'|email_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Адрес</li>
@@ -67,11 +69,11 @@
               <p class="card-text">
                 <ul class="list-unstyled">
                   <li>Телефон</li>
-                  <li><strong>+7-999-22-22222</strong></li>
+                  <li><strong>{{ '+7-999-22-22222'|tel_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Email</li>
-                  <li><strong>>{{ 'geeklab@kz.ru'|email_to_link }}</strong></li>
+                  <li><strong>{{ 'geeklab@kz.ru'|email_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Адрес</li>
@@ -97,11 +99,11 @@
               <p class="card-text">
                 <ul class="list-unstyled">
                   <li>Телефон</li>
-                  <li><strong>+7-999-33-33333</strong></li>
+                  <li><strong>{{ '+7-999-33-33333'|tel_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Email</li>
-                  <li><strong>>{{ 'geeklab@msk.ru'|email_to_link }}</strong></li>
+                  <li><strong>{{ 'geeklab@msk.ru'|email_to_link }}</strong></li>
                 </ul>
                 <ul class="list-unstyled">
                   <li>Адрес</li>

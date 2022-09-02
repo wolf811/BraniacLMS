@@ -1,9 +1,12 @@
 from django.db import models
 
 # Create your models here.
-
+class ObjectManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
 
 class News(models.Model):
+    objects = ObjectManager()
     title = models.CharField(max_length=256, verbose_name="Title")
     preambule = models.CharField(max_length=1024, verbose_name="Preambule")
     body = models.TextField(blank=True, null=True, verbose_name="Body")
@@ -26,12 +29,8 @@ class News(models.Model):
         self.save()
 
 
-class CoursesManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(deleted=False)
-
 class Courses(models.Model):
-    objects = CoursesManager()
+    objects = ObjectManager()
     name = models.CharField(max_length=256, verbose_name="Name")
     description = models.TextField(
         verbose_name="Description", blank=True, null=True
@@ -58,6 +57,7 @@ class Courses(models.Model):
 
 
 class Lesson(models.Model):
+    objects = ObjectManager()
     course = models.ForeignKey(Courses, on_delete=models.CASCADE)
     num = models.PositiveIntegerField(verbose_name="Lesson number")
     title = models.CharField(max_length=256, verbose_name="Name")

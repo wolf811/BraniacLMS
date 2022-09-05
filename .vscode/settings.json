@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "BraniacDB",
+            "database": "${workspaceFolder:BraniacLMS}/db.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

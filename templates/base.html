@@ -1,5 +1,5 @@
-{% load static %}
 <!doctype html>
+{% load static %}
 <html lang="ru">
 
 <head>
@@ -12,11 +12,18 @@
     <link rel="stylesheet" href="{% static 'css/Chart.min.css' %}">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{% static 'css/fontawesome.all.min.css' %}">
-    <title>Welcome to Braniac!</title>
+    <title>
+        {% block title %}
+        Welcome to Braniac!
+        {% endblock title %}
+    </title>
 </head>
 
 <body>
     {% include 'includes/main_menu.html' %}
+    {% block messages %}
+    {% include 'includes/messages.html' %}
+    {% endblock messages %}
     <div class="container-md">
         {% block content %}
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
@@ -39,6 +46,17 @@
     <script src="{% static 'js/Chart.min.js' %}"></script>
     <!-- FontAwesome -->
     <script src="{% static 'js/fontawesome.all.min.js' %}"></script>
+    <!-- {% block js %}
+    <script>
+        $(document).ready(function () {
+            {% if messages %}
+            // Toasts
+            $(".toast").toast({ delay: 5000 });
+            $(".toast").toast("show");
+            {% endif %}
+        });
+    </script>
+    {% endblock js %} -->
 </body>
 
 </html>

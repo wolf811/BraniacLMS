@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class ObjectManager(models.Manager):
@@ -28,7 +29,11 @@ class News(models.Model):
         self.deleted = True
         self.save()
 
-
+    class Meta:
+        verbose_name = _("News")
+        verbose_name_plural = _("News")
+        ordering = ("-created",)
+    
 class Courses(models.Model):
     objects = ObjectManager()
     name = models.CharField(max_length=256, verbose_name="Name")
@@ -84,7 +89,8 @@ class Lesson(models.Model):
 
     class Meta:
         ordering = ("course", "num")
-
+        verbose_name = _("Lesson")
+        verbose_name_plural = _("Lessons")
 
 class CourseTeachers(models.Model):
     course = models.ManyToManyField(Courses)
@@ -99,3 +105,7 @@ class CourseTeachers(models.Model):
     def delete(self, *args):
         self.deleted = True
         self.save()
+    
+    class Meta:
+        verbose_name=_("Teacher")
+        verbose_name_plural=_("Teachers")

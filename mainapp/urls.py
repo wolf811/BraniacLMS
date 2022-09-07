@@ -17,5 +17,5 @@ urlpatterns = [
     ),
     path("contacts/", views.ContactsPageView.as_view(), name="contacts"),
     path("doc-site/", views.DocSitePageView.as_view(), name="doc-site"),
-    path("login/", views.LoginPageView.as_view(), name="login"),
+    # path("login/", views.LoginPageView.as_view(), name="login"),
 ]

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "social_django",
     "mainapp",
     "authapp",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,5 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 SOCIAL_AUTH_GITHUB_KEY = "2e8638da886c5081c88d"
 SOCIAL_AUTH_GITHUB_SECRET = "50ed9d8621a4abfdc8050c7550d160ea36bdeefc"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

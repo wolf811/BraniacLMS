@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mainapp import models as mainapp_models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 # Register your models here.
 @admin.register(mainapp_models.News)

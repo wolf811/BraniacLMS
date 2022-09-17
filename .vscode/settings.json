@@ -10,5 +10,10 @@
     "sqltools.useNodeRuntime": true,
     "python.analysis.extraPaths": [
         "./config"
-    ]
+    ],
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
